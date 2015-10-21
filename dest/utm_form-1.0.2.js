@@ -269,6 +269,7 @@ UtmForm = (function() {
   UtmForm.prototype.addFormElem = function(fieldName, fieldValue) {
     var allForms, firstForm, form, i, len;
     if (fieldValue) {
+      fieldValue = decodeURIComponent(fieldValue);
       allForms = document.querySelectorAll(this._formQuerySelector);
       if (allForms.length > 0) {
         if (this._addToForm === 'first') {
